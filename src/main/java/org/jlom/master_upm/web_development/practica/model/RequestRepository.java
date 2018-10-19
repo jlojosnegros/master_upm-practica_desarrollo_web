@@ -1,0 +1,10 @@
+package org.jlom.master_upm.web_development.practica.model;
+
+import org.springframework.data.repository.CrudRepository;
+
+import java.util.List;
+
+public interface RequestRepository extends CrudRepository<Request, Long> {
+
+    List<Request>  findByName(String name);
+}
