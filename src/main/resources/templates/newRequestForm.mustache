@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h1>
+    Nueva Peticion
+</h1>
+<form action="createNewRequest" method="post">
+    <div>
+        Nombre
+        <input type="text" name="name" value={{#request}}{{name}}{{/request}}>
+    </div>
+    {{#request}}
+    {{#elements}}
+        <li>
+            {{name}}
+        </li>
+    {{/elements}}
+    {{/request}}
+
+    <button formmethod="post" formaction="addNewRequest" type="submit" value="Enviar">Enviar</button>
+</form>
+</body>
+</html>
