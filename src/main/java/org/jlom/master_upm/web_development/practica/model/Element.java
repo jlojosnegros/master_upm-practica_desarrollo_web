@@ -10,14 +10,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-//@Entity
+@Entity
 @NoArgsConstructor
 @ToString
 public class Element {
 
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
-    long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    long elementId;
 
     @Getter
     @Setter

@@ -28,8 +28,8 @@ public class PracticaApplication {
             logger.warning("*** JLOM ENTRANDO *** ");
 
             Request req1 = new Request("req1");
-//			req1.addElement(new Element("Naranja"));
-//			req1.addElement(new Element("Pera"));
+			req1.addElement(new Element("Naranja"));
+			req1.addElement(new Element("Pera"));
 			requestRepository.save(req1);
 
 			final String req2Name = "req2";

@@ -16,24 +16,24 @@ public class Request {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    long id;
+    long requestId;
 
     @Getter
     @Setter
     String name;
 
     @Getter
-    //@OneToMany(cascade = CascadeType.ALL )
-    //List<Element> elements;
+    @OneToMany(cascade = CascadeType.ALL )
+    List<Element> elements;
 
-//    public Request(String name, List<Element> elements) {
-//        this.name = name;
-//        this.elements = elements;
-//    }
+    public Request(String name, List<Element> elements) {
+        this.name = name;
+        this.elements = elements;
+    }
 
     public Request(String name) {
         this.name = name;
-       // this.elements = new ArrayList<>();
+        this.elements = new ArrayList<>();
     }
 
     public void addElement(Element element) {
