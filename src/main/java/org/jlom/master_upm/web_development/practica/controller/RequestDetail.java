@@ -1,4 +1,4 @@
-package org.jlom.master_upm.web_development.practica.controller.controller;
+package org.jlom.master_upm.web_development.practica.controller;
 
 
 import org.jlom.master_upm.web_development.practica.model.Request;
