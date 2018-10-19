@@ -15,6 +15,8 @@ import java.util.List;
 public class Request {
 
     @Id
+    @Getter
+    @Setter
     @GeneratedValue(strategy = GenerationType.AUTO)
     long requestId;
 

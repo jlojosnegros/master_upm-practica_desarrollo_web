@@ -14,6 +14,16 @@
     {{/elements}}
 </div>
 <div>
+    <form action="/newRequest" method="post">
+        <input type="hidden" name="requestId" value={{#request}}{{requestId}}{{/request}} />
+        <button>Edit form</button>
+    </form>
+    <button formaction="newRequest" name="submit" formmethod="post" type="submit" value={{#request}}{{requestId}}{{/request}}>
+        Edit
+    </button>
+    <a href="newRequest" methods="post">Edit</a>
+</div>
+<div>
     <a href="/">Back</a>
 </div>
 </body>

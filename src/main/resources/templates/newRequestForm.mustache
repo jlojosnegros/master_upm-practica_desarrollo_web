@@ -20,6 +20,11 @@
     {{/elements}}
     {{/request}}
 
+
+    <input type="hidden" name="requestId" value={{#request}}{{requestId}}{{/request}} />
+
+
+
     <button formmethod="post" formaction="addNewRequest" type="submit" value="Enviar">Enviar</button>
 </form>
 </body>

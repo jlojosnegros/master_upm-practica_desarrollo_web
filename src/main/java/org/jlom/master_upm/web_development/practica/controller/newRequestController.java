@@ -17,7 +17,7 @@ public class newRequestController {
     RequestRepository requestRepository;
     final Logger logger = Logger.getLogger(getClass().getName());
 
-    @RequestMapping(path = "newRequest", method = RequestMethod.GET)
+    @RequestMapping(path = "newRequest", method = RequestMethod.POST)
     public String handleNewRequest(@RequestParam(name = "requestId", required = false) Long id,
                                    Model model) {
 
@@ -27,7 +27,6 @@ public class newRequestController {
             Optional<Request> request = requestRepository.findById(id);
             model.addAttribute("request", request.get());
         }
-
         return "newRequestForm";
     }
 
