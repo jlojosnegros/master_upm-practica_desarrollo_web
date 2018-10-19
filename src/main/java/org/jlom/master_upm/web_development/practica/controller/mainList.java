@@ -18,11 +18,9 @@ public class mainList {
     @GetMapping("/")
     public String dashboard(Model model) {
         Logger logger = Logger.getLogger(getClass().getName());
-        logger.warning("jlom : Entrando en controlador mainList");
-
+        logger.info("jlom : Entrando en controlador mainList");
 
         Iterable<Request> requests = requestRepository.findAll();
-        logger.info("requests:" + requests.toString());
 
         model.addAttribute("requests", requests);
         return "mainList";

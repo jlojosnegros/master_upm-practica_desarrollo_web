@@ -19,30 +19,30 @@ public class PracticaApplication {
 	}
 
 
-//	@Bean
-//	public CommandLineRunner demo (RequestRepository requestRepository) {
-//		return (args -> {
-//
-//            Logger logger = Logger.getLogger(getClass().getName());
-//
-//            logger.warning("*** JLOM ENTRANDO *** ");
-//
-//            Request req1 = new Request("req1");
-//			req1.addElement(new Element("Naranja"));
-//			req1.addElement(new Element("Pera"));
-//			requestRepository.save(req1);
-//
-//
-//
-//			final String req2Name = "req2";
-//
-//			requestRepository.save(new Request(req2Name));
-//
-//			List<Request> byName = requestRepository.findByName(req2Name);
-//
-//			assert(byName.size() == 1);
-//			assert(byName.get(0).getName().equals(req2Name));
-//            assert(byName.get(0).getElements().size() == 2);
-//        });
-//	}
+	@Bean
+	public CommandLineRunner demo (RequestRepository requestRepository) {
+		return (args -> {
+
+            Logger logger = Logger.getLogger(getClass().getName());
+
+            logger.warning("*** JLOM ENTRANDO *** ");
+
+            Request req1 = new Request("req1");
+			req1.addElement(new Element("Naranja"));
+			req1.addElement(new Element("Pera"));
+			requestRepository.save(req1);
+
+
+
+			final String req2Name = "req2";
+
+			requestRepository.save(new Request(req2Name));
+
+			List<Request> byName = requestRepository.findByName(req2Name);
+
+			assert(byName.size() == 1);
+			assert(byName.get(0).getName().equals(req2Name));
+            assert(byName.get(0).getElements().size() == 2);
+        });
+	}
 }
