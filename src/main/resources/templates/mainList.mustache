@@ -1,0 +1,23 @@
+<html>
+<head>
+</head>
+
+<body>
+<h1>
+    Tablon de anuncios
+</h1>
+<ul>
+    {{#requests}}
+        <li>
+            <a href="request_detail/{{id}}">{{name}}</a>
+        </li>
+    {{/requests}}
+    {{^requests}}
+        Todavia no hay pedidos que mostrar
+    {{/requests}}
+</ul>
+<button name="submit" type="submit" value="submit-true">
+    Create new Request
+</button>
+</body>
+</html>
