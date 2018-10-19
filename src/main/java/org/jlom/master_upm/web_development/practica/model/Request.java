@@ -22,8 +22,9 @@ public class Request {
     @Setter
     String name;
 
-    @Getter
+
     @OneToMany(cascade = CascadeType.ALL )
+    @Getter
     List<Element> elements;
 
     public Request(String name, List<Element> elements) {
@@ -37,6 +38,7 @@ public class Request {
     }
 
     public void addElement(Element element) {
+        element.setRequest(this);
         elements.add(element);
     }
 }

@@ -32,6 +32,8 @@ public class PracticaApplication {
 			req1.addElement(new Element("Pera"));
 			requestRepository.save(req1);
 
+
+
 			final String req2Name = "req2";
 
 			requestRepository.save(new Request(req2Name));
@@ -40,7 +42,7 @@ public class PracticaApplication {
 
 			assert(byName.size() == 1);
 			assert(byName.get(0).getName().equals(req2Name));
-
-		});
+            assert(byName.get(0).getElements().size() == 2);
+        });
 	}
 }

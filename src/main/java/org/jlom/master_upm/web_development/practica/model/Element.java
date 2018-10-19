@@ -5,10 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @NoArgsConstructor
@@ -22,6 +19,11 @@ public class Element {
     @Getter
     @Setter
     String name;
+
+    @ManyToOne
+    @Setter
+    @Getter
+    Request request;
 
     public Element(String name) {
         this.name = name;
