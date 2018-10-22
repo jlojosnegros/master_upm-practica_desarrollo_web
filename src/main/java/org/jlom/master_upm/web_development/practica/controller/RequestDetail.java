@@ -26,7 +26,7 @@ public class RequestDetail {
 
         Optional<Request> byId = requestRepository.findById(id);
         model.addAttribute("request", byId.get());
-        model.addAttribute("elements",byId.get().getElements());
+
 
         return "request_detail";
     }

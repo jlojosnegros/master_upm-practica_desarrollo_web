@@ -7,11 +7,11 @@
     Elements:
 </h2>
 <div>
-    {{#elements}}
+    {{#request.elements}}
         <li>
             {{name}}
         </li>
-    {{/elements}}
+    {{/request.elements}}
 </div>
 <div>
     <form action="/newRequest" method="post">
