@@ -38,10 +38,10 @@ public class PracticaApplication {
 
 			requestRepository.save(new Request(req2Name));
 
-			List<Request> byName = requestRepository.findByName(req2Name);
+			List<Request> byName = requestRepository.findByRequestName(req2Name);
 
 			assert(byName.size() == 1);
-			assert(byName.get(0).getName().equals(req2Name));
+			assert(byName.get(0).getRequestName().equals(req2Name));
             assert(byName.get(0).getElements().size() == 2);
         });
 	}

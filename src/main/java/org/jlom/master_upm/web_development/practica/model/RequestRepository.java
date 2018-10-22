@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface RequestRepository extends CrudRepository<Request, Long> {
 
-    List<Request> findByName(String requestName);
+    List<Request> findByRequestName(String requestName);
 }

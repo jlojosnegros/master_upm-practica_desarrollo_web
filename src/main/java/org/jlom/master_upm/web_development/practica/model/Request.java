@@ -22,25 +22,25 @@ public class Request {
 
     @Getter
     @Setter
-    String name;
+    String requestName;
 
 
     @OneToMany(cascade = CascadeType.ALL )
     @Getter
+    @Setter
     List<Element> elements;
 
-    public Request(String name, List<Element> elements) {
-        this.name = name;
+    public Request(String requestName, List<Element> elements) {
+        this.requestName = requestName;
         this.elements = elements;
     }
 
-    public Request(String name) {
-        this.name = name;
+    public Request(String requestName) {
+        this.requestName = requestName;
         this.elements = new ArrayList<>();
     }
 
     public void addElement(Element element) {
-        element.setRequest(this);
         elements.add(element);
     }
 }

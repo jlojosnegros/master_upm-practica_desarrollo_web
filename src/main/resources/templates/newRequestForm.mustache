@@ -2,6 +2,14 @@
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
 <h1>
@@ -15,20 +23,22 @@
 <form action="createNewRequest" method="post">
     <div>
         Nombre
-        <input type="text" name="name" value={{#request}}{{name}}{{/request}}>
+        <input type="text" name="requestName" value={{#request}}{{requestName}}{{/request}}>
     </div>
-    {{#request}}
-    {{#elements}}
-        <li>
-            {{name}}
-        </li>
-    {{/elements}}
-    {{/request}}
+
+
+    {{#elementList}}
+        <div name="div_elements">
+            <li>
+                <input type="hidden" name = "elementId" value={{elementId}}>
+                <input type="text" name="elementName" value={{elementName}} >
+            </li>
+        </div>
+    {{/elementList}}
 
     {{^new_request}}
         <input type="hidden" name="requestId" value={{#request}}{{requestId}}{{/request}} />
     {{/new_request}}
-
     <button formmethod="post" formaction="addNewRequest" type="submit" value="Enviar">Enviar</button>
 </form>
 </body>

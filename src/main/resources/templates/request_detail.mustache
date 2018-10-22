@@ -1,7 +1,7 @@
 <html>
 <body>
 <h1>
-    Request:{{#request}}{{name}}{{/request}}
+    Request:{{#request}}{{requestName}}{{/request}}
 </h1>
 <h2>
     Elements:
@@ -9,7 +9,7 @@
 <div>
     {{#request.elements}}
         <li>
-            {{name}}
+            {{elementName}}
         </li>
     {{/request.elements}}
 </div>
