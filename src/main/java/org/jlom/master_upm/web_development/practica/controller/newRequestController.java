@@ -22,11 +22,14 @@ public class newRequestController {
                                    Model model) {
 
         logger.info("handleNewRequest: " + id);
-
+        boolean new_request = true;
         if (null != id) {
             Optional<Request> request = requestRepository.findById(id);
             model.addAttribute("request", request.get());
+            new_request = false;
         }
+
+        model.addAttribute("new_request", new_request);
         return "newRequestForm";
     }
 

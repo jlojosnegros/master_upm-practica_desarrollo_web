@@ -5,7 +5,12 @@
 </head>
 <body>
 <h1>
-    Nueva Peticion
+    {{#new_request}}
+        Nuevo Pedido
+    {{/new_request}}
+    {{^new_request}}
+        Editar Pedido
+    {{/new_request}}
 </h1>
 <form action="createNewRequest" method="post">
     <div>
@@ -20,10 +25,9 @@
     {{/elements}}
     {{/request}}
 
-
-    <input type="hidden" name="requestId" value={{#request}}{{requestId}}{{/request}} />
-
-
+    {{^new_request}}
+        <input type="hidden" name="requestId" value={{#request}}{{requestId}}{{/request}} />
+    {{/new_request}}
 
     <button formmethod="post" formaction="addNewRequest" type="submit" value="Enviar">Enviar</button>
 </form>
